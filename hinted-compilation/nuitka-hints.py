@@ -48,6 +48,11 @@ if not os.path.exists(hinted_mods_fn):
 my_opts = [
     "--standalone",  # the purpose of this script
     "--recurse-none",  # exclude everything
+    "--windows-icon=logo.ico",
+    "--mingw64",
+    # "--windows-disable-console",
+    "--user-plugin=vtkmod.py",
+
 ]
 
 try:
