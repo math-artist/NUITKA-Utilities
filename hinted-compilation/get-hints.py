@@ -237,7 +237,8 @@ def call_analyzer(f, call_list, import_calls, import_files, trace_logic):
 
     # members of shared modules cannot be filtered out, so allow them all
     if (
-            hasFilenameExtension(res_file, getSharedLibrarySuffix())  # a shared module!
+            not hasFilenameExtension(res_file, (".py", ".pyw"))  # a shared module! REVERT JSF
+            # hasFilenameExtension(res_file, getSharedLibrarySuffix())  # a shared module!
             or normalized_file in accept_always
     ):
         write_mod(RESULT + ".*", normalized_file)
